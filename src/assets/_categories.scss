@@ -1,0 +1,30 @@
+.category {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 35px;
+
+  .briefcase {
+    border: 1px solid lightgreen;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: lightgreen;
+  }
+
+  .gift {
+    border: 1px solid lightpink;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: lightpink;
+  }
+
+  .chart {
+    border: 1px solid #FFECB3;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #FFECB3;
+  }
+
+
+}

@@ -1,0 +1,81 @@
+.content {
+  margin-bottom: 20px;
+
+}
+
+.cont {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  .day {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .case {
+    border: 1px solid lightgreen;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: lightgreen;
+  }
+
+  .shopping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .icon-and-text {
+      display: flex;
+      align-items: center;
+    }
+
+    .subtext {
+      align-items: center;
+
+      p {
+        font-weight: 400;
+        line-height: 16px;
+        font-size: 13px;
+        color: #616161;
+        margin: 0;
+      }
+    }
+
+    .amount {
+      color: red;
+    }
+
+    .gift {
+      border: 1px solid lightpink;
+      padding: 15px;
+      border-radius: 50%;
+      background-color: lightpink;
+    }
+
+    .chart {
+      border: 1px solid #FFECB3;
+      padding: 15px;
+      border-radius: 50%;
+      background-color: #FFECB3;
+    }
+
+    .wrench {
+      border: 1px solid #B39DDB;
+      padding: 15px;
+      border-radius: 50%;
+      background-color: #B39DDB;
+    }
+
+    .jug {
+      border: 1px solid #B3E5FC;
+      padding: 15px;
+      border-radius: 50%;
+      background-color: #B3E5FC;
+    }
+  }
+}

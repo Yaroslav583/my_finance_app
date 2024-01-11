@@ -1,0 +1,53 @@
+.home-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+
+  .brand-box {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background-image: url("./images/Logo2.png");
+      margin-right: 8px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+    }
+  }
+
+  .avatar-icon-container {
+    display: flex;
+    align-items: center;
+
+
+    .avatar {
+      font-size: 20px;
+      text-align: center;
+      width: 32px;
+      height: 32px;
+      background-color: gray;
+      border-radius: 50%;
+      margin-left: 15px;
+    }
+  }
+}
+
+.content {
+  margin-top: 20px;
+
+
+
+}

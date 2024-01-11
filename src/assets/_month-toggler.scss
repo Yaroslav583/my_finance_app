@@ -1,0 +1,20 @@
+.month-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 18px;
+  .month-text {
+    display: flex;
+    align-items: center;
+    color: #333;
+
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+  }
+  .month{
+    margin-right: 10px;
+  }
+}

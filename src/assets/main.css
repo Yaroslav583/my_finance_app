@@ -1,3 +1,10 @@
 @import "bootstrap/scss/bootstrap.scss";
-
+@import "_nav.scss";
+@import "_auth.scss";
+@import "_toolbar.scss";
+@import "_month-toggler.scss";
+@import "_transactions.scss";
+@import "_categories.scss";
+@import "_summary-balance.scss";
+@import "_settings.scss";
 
