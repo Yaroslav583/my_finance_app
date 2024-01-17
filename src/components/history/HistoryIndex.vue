@@ -76,9 +76,9 @@
 
 <script>
 
-  import MonthToggler from "@/components/widgets/MonthToggler.vue";
-  import Toolbar from "@/components/widgets/Toolbar.vue";
-  import SumnaryBalance from "@/components/widgets/SumnaryBalance.vue";
+import MonthToggler from "@/components/widgets/MonthToggler.vue";
+import Toolbar from "@/components/widgets/Toolbar.vue";
+import SumnaryBalance from "@/components/widgets/SumnaryBalance.vue";
 
 export default {
   components:{

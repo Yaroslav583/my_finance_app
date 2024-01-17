@@ -34,18 +34,25 @@ import AuthIndex from "@/components/auth/AuthIndex.vue";
 import HistoryIndex from "@/components/history/HistoryIndex.vue";
 import HomeIndex from "@/components/home/HomeIndex.vue";
 import SettingsIndex from "@/components/settings/SettingsIndex.vue";
+import {useAccountStore} from "@/stores/account.js";
+import {mapStores} from "pinia";
 
 export default {
+  components: {SettingsIndex, HomeIndex, HistoryIndex, AuthIndex},
   data() {
     return {
       activePage: 'home'
     }
   },
-  components: {SettingsIndex, HomeIndex, HistoryIndex, AuthIndex},
+
   computed: {
+    ...mapStores(useAccountStore),
     isAuthenticated() {
-      return true;
+      return this.accountStore.isAuthenticated;
     }
+  },
+  created() {
+    this.accountStore.fetchMyAccount();
   }
 }
 </script>
