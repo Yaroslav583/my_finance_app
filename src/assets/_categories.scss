@@ -1,27 +1,29 @@
 .category {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   text-align: center;
   margin-top: 35px;
 
-  .green{
+
+  .green {
     color: #00897B;
   }
-
-  .briefcase {
+.red{
+  color: red;
+}
+  .categories {
+    color: #212121;
     border: 1px solid lightgreen;
     padding: 15px;
     border-radius: 50%;
     background-color: lightgreen;
   }
 
-  .gift {
-    border: 1px solid lightpink;
-    padding: 15px;
-    border-radius: 50%;
-    background-color: lightpink;
-  }
+.black{
+  color: black;
+}
 
   .chart {
     border: 1px solid #FFECB3;
@@ -29,6 +31,4 @@
     border-radius: 50%;
     background-color: #FFECB3;
   }
-
-
 }

@@ -92,3 +92,6 @@ export default {
 
 }
 </script>
+<style>
+@import '@/assets/_history.scss';
+</style>

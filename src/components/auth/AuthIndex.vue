@@ -12,9 +12,7 @@ import Register from "@/components/auth/Register.vue";
 
 export default {
   computed: {
-    register() {
-      return register
-    }
+
   },
   data() {
     return {
