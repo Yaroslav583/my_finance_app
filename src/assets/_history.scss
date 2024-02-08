@@ -33,18 +33,21 @@
       display: flex;
       align-items: center;
     }
+    .title {
 
+
+      font-weight: 400;
+      line-height: 16px;
+      font-size: 13px;
+      color: #616161;
+      margin: 0;
+    }
     .subtext {
       align-items: center;
 
-      p {
-        font-weight: 400;
-        line-height: 16px;
-        font-size: 13px;
-        color: #616161;
-        margin: 0;
-      }
+
     }
+
 
     .amount {
       color: red;

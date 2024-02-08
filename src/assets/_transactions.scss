@@ -1,21 +1,21 @@
 .avatar-user {
   margin: 20px 20px;
-  border-radius: 50%; /* Используйте 50% для создания круга */
+  border-radius: 50%;
   border: 1px solid #00897B;
   background-color: #00897B;
   padding: 20px;
 
 
-.transaction {
-  margin-top: 18px;
-  justify-content: space-between;
-  align-items: center;
 
-  .icon-box {
-    margin-right: 8px;
+
+  .transaction {
+    margin-top: 18px;
+    justify-content: space-between;
+    align-items: center;
+
 
   }
-}
+
 }
 
 .transaction-form-box {
@@ -40,6 +40,9 @@
 
     .category-box {
       text-align: left;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   }
 }

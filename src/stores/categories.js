@@ -9,8 +9,8 @@ export const useCategoriesStore = defineStore('categories', {
         }
     },
     getters: {
-        incomesCategories:(state) => state.categories.filter((category)=> category.type === 'incomes'),
-        expensesCategories:(state) => state.categories.filter((category)=> category.type === 'expenses')
+        incomesCategories: (state) => state.categories.filter((category) => category.type === 'incomes'),
+        expensesCategories: (state) => state.categories.filter((category) => category.type === 'expenses')
     },
     actions: {
         async fetchCategories() {
@@ -18,7 +18,10 @@ export const useCategoriesStore = defineStore('categories', {
                 this.categories = response.data;
             }).catch((error) => {
                 console.log(error);
-            })
+            });
+        },
+        getCategory(categoryId) {
+            return this.categories.find((item) => item.id === categoryId);
         }
     }
 })

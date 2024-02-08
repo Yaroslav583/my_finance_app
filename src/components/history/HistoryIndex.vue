@@ -4,73 +4,38 @@
     <month-toggler/>
     <sumnary-balance/>
 
-    <div class="cont">
-      <div class="day">
-        <p>dec, 12th</p>
+    <div :key="currentDate" class="cont">
+      <div class="day" >
+        <p>{{ currentDate }}</p>
         <p>-1125</p>
+      </div>
+        <div>
+
+          <div
+              v-for="transaction in transactionsStore.transactions"
+              :key="transaction.id"
+              class="shopping"
+              @click="editTransaction(transaction)"
+          >
+            <div class="icon-and-text">
+              <font-awesome-icon class="me-2  case"
+                                 :icon="categoriesStore.getCategory(transaction.category_id)?.icon "/>
+              <div>
+                <div class="subtext"> {{ transaction.description }}</div>
+                <div class="title">{{ categoriesStore.getCategory(transaction.category_id)?.title }}</div>
+              </div>
+            </div>
+            <p>{{ transaction.amount }}</p>
+          </div>
+
+
+        </div>
 
       </div>
 
-      <div>
-        <div class="shopping">
-          <div class="icon-and-text">
-            <font-awesome-icon class="me-2  case" icon="basket-shopping"/>
-            <div class="subtext"> Egg & veggies <p>Groceries</p></div>
-          </div>
-          <p class="amount"> -500</p>
-        </div>
-
-        <div class="shopping">
-          <div class="icon-and-text">
-            <font-awesome-icon class="me-2 gift" icon="shield"/>
-            <div class="subtext"> Health </div>
-          </div>
-          <p class="amount"> -352</p>
-        </div>
-        <div class="shopping">
-          <div class="icon-and-text">
-            <font-awesome-icon class="me-2 chart" icon="mug-hot"/>
-            <div class="subtext"> Hangouts with Sujay <p>Bar & cafe</p></div>
-          </div>
-          <p class="amount"> -352</p>
-        </div>
-      </div>
     </div>
-    <div class="cont">
-      <div class="day">
-        <p>dec, 11th</p>
-        <p>-1125</p>
 
-      </div>
-
-      <div>
-        <div class="shopping">
-          <div class="icon-and-text">
-            <font-awesome-icon class="me-2  wrench" icon="wrench"/>
-            <div class="subtext"> Egg & veggies <p>Groceries</p></div>
-          </div>
-          <p class="amount"> -500</p>
-        </div>
-
-        <div class="shopping">
-          <div class="icon-and-text">
-            <font-awesome-icon class="me-2 gift" icon="shield"/>
-            <div class="subtext"> Medicine for John <p>Health</p></div>
-          </div>
-          <p class="amount"> -352</p>
-        </div>
-        <div class="shopping">
-          <div class="icon-and-text">
-            <font-awesome-icon class="me-2 jug" icon="jug-detergent"/>
-            <div class="subtext"> Hangouts with Sujay<p>Bar & cafe</p></div>
-          </div>
-          <p class="amount"> -352</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+    <transaction-form/>
 </template>
 
 
@@ -79,18 +44,45 @@
 import MonthToggler from "@/components/widgets/MonthToggler.vue";
 import Toolbar from "@/components/widgets/Toolbar.vue";
 import SumnaryBalance from "@/components/widgets/SumnaryBalance.vue";
+import {mapStores} from "pinia";
+import {useTransactionsStore} from "@/stores/transactions.js";
+import {useCategoriesStore} from "@/stores/categories.js";
+import TransactionForm from "@/components/transactions/TransactionForm.vue";
 
 export default {
-  components:{
+  components: {
+    TransactionForm,
     MonthToggler,
     Toolbar,
     SumnaryBalance,
-  },
-  data() {
-    return {}
+
   },
 
-}
+  data() {
+
+
+    return {};
+
+  },
+  methods: {
+    editTransaction(transaction) {
+      this.transactionsStore.formTransaction = {...transaction};
+      this.transactionsStore.showForm = true;
+    }
+
+  },
+  computed: {
+    ...mapStores(useTransactionsStore, useCategoriesStore),
+    currentDate() {
+      const today = new Date();
+      const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+      return today.toLocaleDateString(undefined, options);
+    }
+
+  }
+
+
+};
 </script>
 <style>
 @import '@/assets/_history.scss';
